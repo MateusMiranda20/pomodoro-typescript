@@ -1,6 +1,8 @@
 export function secondToTime(seconds: number): string {
-    const zeroLeft = (n: number) => Math.floor(n).toString().padStart(2, '00')
-    const min = zeroLeft((seconds / 6) % 60)
-    const max = zeroLeft((seconds % 60) % 60)
-    return `${min}:${max}`
+    const zeroLeft = (n: number) => Math.floor(n).toString().padStart(2, '0')
+
+    const min = zeroLeft(seconds / 60) // Calcula os minutos corretamente
+    const sec = zeroLeft(seconds % 60) // Calcula os segundos corretamente
+
+    return `${min}:${sec}`
 }
