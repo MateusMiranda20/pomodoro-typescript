@@ -1,5 +1,6 @@
-export function secondToTime(seconds: number): string {
-    const zeroLeft = (n: number) => Math.floor(n).toString().padStart(2, '0')
+import { zeroLeft } from "./zero-left"
+
+export function secondToMinutes(seconds: number): string {
 
     const min = zeroLeft(seconds / 60) // Calcula os minutos corretamente
     const sec = zeroLeft(seconds % 60) // Calcula os segundos corretamente
